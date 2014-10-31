@@ -15,15 +15,7 @@
       then hitting Return
       to return to the shell.
     </p>
-{% if page.lessons contains 'Bash' %}
-    <h4>The Bash Shell</h4>
-    <p>
-      Bash is a commonly-used shell. Using a shell gives you
-      more power to do more tasks more quickly with your
-      computer.
-    </p>
-{% endif %}
-{% if page.lessons contains 'Git' %}
+
     <h4>Git</h4>
     <p>
       Git is a state-of-the-art version control system. It
@@ -31,37 +23,37 @@
       options for easily updating a shared or public version of
       your code on <a href="https://github.com/">github.com</a>.
     </p>
-{% endif %}
+
+    <h4>ROOT</h4>
+    <p>
+      <a href="http://root.cern.ch">ROOT</a> is ubiquitous in HEP for data analysis and presentation.
+      It is available for a variety of operating systems, and is included in the standard repositories
+      for many Linux distributions. We will use version 5.34, but newer versions should also be OK.
+    </p>
   </div>
   <div class="span6">
-{% if page.lessons contains 'Python' %}
     <h4>Python</h4>
     <p>
       Python is becoming very popular in scientific computing,
       and it's a great language for teaching general programming concepts due to its easy-to-read syntax.
-      We teach with Python version 2.7,
-      since it is still the most widely used.
+      We teach with Python 2 (version 2.6 or 2.7) since it is still more widely used than Python 3.
       Installing all the scientific packages for Python individually can be a bit difficult,
-      so we recommend an all-in-one installer.
+      depending on your Linux distribution, but all-in-one installers are available.
     </p>
-{% endif %}
-{% if page.lessons contains 'R' %}
-    <h4>R</h4>
     <p>
-      <a href="http://www.r-project.org">R</a> is a programming language that is especially powerful for
-      data exploration, visualization, and statistical analysis. To interact with R, we will
-      use <a href="http://www.rstudio.com/">RStudio</a>, an interactive
-      development environment (IDE).
+      For this workshop you will need two specialised Python packages:
+      <a href="http://root.cern.ch/drupal/content/pyroot">PyROOT</a> for access to ROOT and 
+      <a href="https://nose.readthedocs.org/en/latest/">Nose</a> for unit testing.
+      Once you have installed Python and ROOT, check that you have these packages installed by
+      trying to import them: type the following at the Python prompt
+      <pre>
+>>> import ROOT
+>>> import nose
+      </pre>
+      If you see no errors then the packages are installed. If you do see errors, and are
+      unable to install these packages, let us know as soon as possible so we can help you
+      get set up before the workshop. The installation instructions below are not comprehensive!
     </p>
-{% endif %}
-{% if page.lessons contains 'SQL' %}
-    <h4>SQL</h4>
-    <p>
-      SQL is a specialized programming language used with databases.
-      We use a simple database manager called <a href="http://www.sqlite.org/">SQLite</a>,
-      either directly or through a browser plugin.
-    </p>
-{% endif %}
   </div>
 </div>
 
@@ -69,7 +61,6 @@
 
 <div class="row-fluid">
   <div class="span6">
-{% if page.lessons contains 'Python' %}
     <h4>Python</h4>
     <ul>
       <li>
@@ -81,8 +72,6 @@
         make sure to check <strong>Make Anaconda the default Python</strong>.
       </li>
     </ul>
-{% endif %}
-{% if page.lessons contains 'Git' %}
     <h4>Git Bash</h4>
     <p>
       Install Git for Windows by download and running
@@ -104,7 +93,6 @@
         Double click on the file to run it.
       </li>
     </ul>
-{% endif %}
   </div>
   <div class="span6">
     <h4>Editor</h4>
@@ -120,25 +108,6 @@
       (or have other tools like Git launch it for you).
       Please ask your instructor to help you do this.
     </p>
-{% if page.lessons contains 'R' %}
-    <h4>R</h4>
-    <p>
-      Install R by downloading and running
-      <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
-      from <a href="http://cran.r-project.org/index.html">CRAN</a>.
-      Also, please install the
-      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
-    </p>
-{% endif %}
-{% if page.lessons contains 'SQL' %}
-    <h4>SQLite</h4>
-    <p>
-      Download the <a href="http://files.software-carpentry.org/sqlite3.exe">sqlite3 program</a>
-      and put it in the directory where you are running examples.
-      Alternatively,
-      you may install the Firefox SQLite browser plugin described <a href="#firefox-sqlite">below</a>.
-    </p>
-{% endif %}
   </div>
 </div>
 
@@ -146,16 +115,6 @@
 
 <div class="row-fluid">
   <div class="span6">
-{% if page.lessons contains 'Bash' %}
-    <h4>Bash</h4>
-    <p>
-      The default shell in all versions of Mac OS X is bash,
-      so no need to install anything.  You access bash from
-      the Terminal (found
-      in <code>/Applications/Utilities</code>).  You may want
-      to keep Terminal in your dock for this workshop.
-    </p>
-{% endif %}
     <h4>Editor</h4>
     <p>
       We recommend
@@ -164,7 +123,6 @@
       In a pinch, you can use <code>nano</code>,
       which should be pre-installed.
     </p>
-{% if page.lessons contains 'Git' %}
     <h4>Git</h4>
     <p>
 
@@ -175,10 +133,8 @@
       here</a>. Use the Leopard installer for 10.5 and the Snow Leopard
       installer for 10.6-10.7.
     </p>
-{% endif %}
   </div>
   <div class="span6">
-{% if page.lessons contains 'Python' %}
     <h4>Python</h4>
     <ul>
       <li>
@@ -196,25 +152,6 @@
 	<a href="http://conda.pydata.org/docs/troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">here</a>.
       </li>
     </ul>
-{% endif %}
-{% if page.lessons contains 'R' %}
-    <h4>R</h4>
-    <p>
-      Install R by downloading and running
-      <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
-      from <a href="http://cran.r-project.org/index.html">CRAN</a>.
-      Also, please install the
-      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
-    </p>
-{% endif %}
-{% if page.lessons contains 'SQL' %}
-    <h4>SQLite</h4>
-    <p>
-      <code>sqlite3</code> comes pre-installed on Mac OS X.
-      Alternatively,
-      you may install the Firefox SQLite browser plugin described <a href="#firefox-sqlite">below</a>.
-    </p>
-{% endif %}
   </div>
 </div>
 
@@ -222,59 +159,31 @@
 
 <div class="row-fluid">
   <div class="span6">
-{% if page.lessons contains 'Bash' %}
-    <h4>Bash</h4>
-    <p>
-      The default shell is usually <code>bash</code>,
-      but if your machine is set up differently
-      you can run it by opening a terminal and typing <code>bash</code>.
-      There is no need to install anything.
-    </p>
-{% endif %}
-{% if page.lessons contains 'Git' %}
     <h4>Git</h4>
     <p>
       If Git is not already available on your machine you can try
       to install it via your distro's package manager
       (e.g. <code>apt-get</code> or <code>yum</code>).
     </p>
-{% endif %}
     <h4>Editor</h4>
     <p>
       <a href="http://kate-editor.org/">Kate</a> is one option for Linux users.
-      In a pinch, you can use <code>nano</code>,
-      which should be pre-installed.
+      Alternatives include <code>emacs</code>, <code>nano</code>, 
+      <code>gedit</code> and <code>vim</code>.
     </p>
-{% if page.lessons contains 'R' %}
-    <h4>R</h4>
-    <p>
-      You can download the binary files for your distribution
-      from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
-      you can use your package manager, e.g. for Debian/Ubuntu
-      run <code>apt-get install r-base</code> or <code>yum install R</code>.
-      Also, please install the
-      <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
-    </p>
-{% endif %}
-{% if page.lessons contains 'SQL' %}
-    <h4>SQLite</h4>
-    <p>
-      <code>sqlite3</code> comes pre-installed on Linux.
-      Alternatively,
-      you may install the Firefox SQLite browser plugin described <a href="#firefox-sqlite">below</a>.
-    </p>
-{% endif %}
   </div>
   <div class="span6">
-{% if page.lessons contains 'Python' %}
     <h4>Python</h4>
     <p>
-      We recommend the all-in-one scientific Python installer
+      If possible you should use your package manager (normally <code>yum</code> or <code>apt-get</code>
+      to install Python along with some other useful related packages, e.g.
+      <pre>
+yum install python python-ipython python-nose root-python
+      </pre>
+    </p>
+    <p>
+      An alternative is the all-in-one scientific Python installer
       <a href="http://continuum.io/downloads.html">Anaconda</a>.
-      (Installation requires using the shell and if you aren't
-      comfortable doing the installation yourself just
-      download the installer and we'll help you at the boot
-      camp.)
     </p>
     <ol>
       <li>
@@ -301,75 +210,6 @@
         distribution the default Python).
       </li>
     </ol>
-{% endif %}
   </div>
 </div>
 
-<h3>All operating systems</h3>
-
-<div class="row-fluid">
-  <div class="span6">
-{% if page.lessons contains 'SQL' %}
-    <h4 id="firefox-sqlite">Firefox SQLite Plugin</h4>
-    <p>
-      Instead of using <code>sqlite3</code> from the command line,
-      you may use <a href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">this plugin</a>
-      for Firefox instead.
-      To install it:
-    </p>
-    <ul>
-      <li>
-	Start Firefox.
-      </li>
-      <li>
-	Go to the <a href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">plugin homepage</a>.
-      </li>
-      <li>
-	Click the "Add Now" button.
-      </li>
-      <li>
-	Click "Install Now" on the dialog that appears after the download completes.
-      </li>
-      <li>
-	Restart Firefox when prompted.
-      </li>
-      <li>
-	To check that the plugin installed correctly, select "SQLite Manager" from the "Tools" menu.
-      </li>
-    </ul>
-    <p>
-      In newer versions of Firefox, the menu bar isn't always displayed. To make
-      it appear, use the <code>Alt</code> key next to the space bar on your
-      keyboard, or consult
-      the <a href="https://support.mozilla.org/en-US/kb/what-happened-to-the-file-edit-and-view-menus">support
-      page</a> from Firefox for additional help.
-    </p>
-{% endif %}
-  </div>
-  <div class="span6">
-{% if page.lessons contains 'VM' %}
-    <h4>Virtual Machine</h4>
-    <p>
-      Some instructors prefer to have learners use a virtual machine (VM)
-      rather than install software on their own computers.
-      If your instructors have chosen to do this,
-      please:
-    </p>
-    <ol>
-      <li>
-	Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
-      </li>
-      <li>
-	Download our <a href="{{site.vm_url}}">VM image</a>.
-	<strong>Warning:</strong>
-	this file is 1.7 GByte,
-	so please download it <em>before</em> coming to your workshop.
-      </li>
-      <li>
-	Load the VM into VirtualBox by selecting "Import Appliance"
-	and loading the <code>.ova</code> file.
-      </li>
-    </ol>
-{% endif %}
-  </div>
-</div>
