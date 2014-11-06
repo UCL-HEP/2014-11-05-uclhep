@@ -74,6 +74,8 @@ ALL_SRC = \
 	$(wildcard intermediate/doit/*.md) \
 	$(wildcard intermediate/webdata/*.md) \
 	$(wildcard slides/*.html) \
+    $(wildcard extras/hep/*.md) \
+    $(wildcard extras/hep/testing/*.md) \
 	$(MOST_SRC)
 
 # Other files that the site depends on.
